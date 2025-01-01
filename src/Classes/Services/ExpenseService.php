@@ -1,11 +1,11 @@
 <?php
 
-namespace con4gis\IOTravelCostsBundle\Classes\Services;
+namespace con4gis\TravelCostsBundle\Classes\Services;
 
 use con4gis\CoreBundle\Resources\contao\models\C4gSettingsModel;
-use con4gis\IOTravelCostsBundle\Classes\Events\CalculateExpenseEvent;
-use con4gis\IOTravelCostsBundle\Entity\TravelCostsSettings;
-use con4gis\IOTravelCostsBundle\Entity\TravelCostsTariff;
+use con4gis\TravelCostsBundle\Classes\Events\CalculateExpenseEvent;
+use con4gis\TravelCostsBundle\Entity\TravelCostsSettings;
+use con4gis\TravelCostsBundle\Entity\TravelCostsTariff;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

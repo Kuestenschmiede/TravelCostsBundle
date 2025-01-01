@@ -10,14 +10,14 @@
  * @copyright  Küstenschmiede GmbH Software & Design
  * @link       https://www.con4gis.org
  */
-namespace con4gis\IOTravelCostsBundle\Resources\contao\modules;
+namespace con4gis\TravelCostsBundle\Resources\contao\modules;
 
 
 use con4gis\CoreBundle\Classes\C4GUtils;
 use con4gis\CoreBundle\Classes\ResourceLoader;
 use con4gis\CoreBundle\Resources\contao\models\C4gSettingsModel;
 use con4gis\MapsBundle\Resources\contao\models\C4gMapProfilesModel;
-use con4gis\IOTravelCostsBundle\Entity\TravelCostsSettings;
+use con4gis\TravelCostsBundle\Entity\TravelCostsSettings;
 use Contao\System;
 use Doctrine\ORM\EntityManager;
 use Contao\Controller;
@@ -27,7 +27,7 @@ use Contao\BackendTemplate;
 
 /**
  * Class ModuleC4gTravelCosts
- * @package \con4gis\IOTravelCostsBundle\Resources\contao\modules
+ * @package \con4gis\TravelCostsBundle\Resources\contao\modules
  */
 class ModuleC4gTravelCosts extends Module
 {
@@ -62,8 +62,8 @@ class ModuleC4gTravelCosts extends Module
         $pageId = $this->mapPage;
         $pageUrl = Controller::replaceInsertTags("{{link_url:: " . $pageId . "}}");
         ResourceLoader::loadJavaScriptResource("bundles/con4giscore/vendor/jQuery/jquery-ui-1.12.1.custom/jquery-ui.min.js", ResourceLoader::JAVASCRIPT, 'jquery-ui');
-        ResourceLoader::loadJavaScriptResource( "bundles/con4gisiotravelcosts/build/travel-finder.js", ResourceLoader::JAVASCRIPT, "travel-finder");
-        ResourceLoader::loadCssResource("bundles/con4gisiotravelcosts/dist/css/travel-finder.min.css", "travel-finder");
+        ResourceLoader::loadJavaScriptResource( "bundles/con4gistravelcosts/build/travel-finder.js", ResourceLoader::JAVASCRIPT, "travel-finder");
+        ResourceLoader::loadCssResource("bundles/con4gistravelcosts/dist/css/travel-finder.min.css", "travel-finder");
         ResourceLoader::loadCssResource("/bundles/con4giscore/vendor/jQuery/jquery-ui-1.12.1.custom/jquery-ui.min.css", 'jquery-ui-css');
         $template = $this->Template;
         $objSettings = C4gSettingsModel::findSettings();

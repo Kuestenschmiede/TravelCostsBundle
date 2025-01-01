@@ -1,8 +1,8 @@
 {
-    "name": "con4gis/io-travel-costs",
+    "name": "con4gis/travel-costs",
     "type": "contao-bundle",
-    "description": "Travel costs bundle to calculate costs for driving using con4gis.io services.",
-    "keywords": ["con4gis", "travel", "costs", "contao", "calculator", "con4gis.io", "taxi", "fare"],
+    "description": "Travel costs bundle to calculate costs for driving using con4gis support services.",
+    "keywords": ["con4gis", "travel", "costs", "contao", "calculator", "con4gis support", "taxi", "fare"],
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
@@ -12,16 +12,16 @@
         }
     ],
     "support": {
-        "email": "support@con4gis.io"
+        "email": "support@con4gis.org"
     },
     "require": {
-        "php": "^7.4 || ^8.0",
-        "contao/core-bundle": "^4.9 || ^5.0",
-        "con4gis/core": "^6.0.2 || ^7.0",
-        "con4gis/maps": "^8.1.0",
+        "php": "^8.0",
+        "contao/core-bundle": "^4.13 || ^5.0",
+        "con4gis/core": "^7.2",
+        "con4gis/maps": "^10",
         "doctrine/orm": "^2.8.4",
         "doctrine/data-fixtures": "^1.4.4",
-        "doctrine/persistence": "^2.1.0"
+        "doctrine/persistence": "^2 || ^3"
     },
     "conflict": {
         "contao/core": "*",
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "con4gis\\IOTravelCostsBundle\\": "src/"
+            "con4gis\\TravelCostsBundle\\": "src/"
         },
         "classmap": [
             "src/Resources/contao/"
@@ -45,6 +45,6 @@
         "preferred-install": "dist"
     },
     "extra": {
-        "contao-manager-plugin": "con4gis\\IOTravelCostsBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "con4gis\\TravelCostsBundle\\ContaoManager\\Plugin"
     }
 }

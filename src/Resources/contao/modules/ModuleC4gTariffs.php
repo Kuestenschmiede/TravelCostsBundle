@@ -1,10 +1,10 @@
 <?php
 
 
-namespace con4gis\IOTravelCostsBundle\Resources\contao\modules;
+namespace con4gis\TravelCostsBundle\Resources\contao\modules;
 
 use con4gis\CoreBundle\Classes\ResourceLoader;
-use con4gis\IOTravelCostsBundle\Entity\TravelCostsSettings;
+use con4gis\TravelCostsBundle\Entity\TravelCostsSettings;
 use Contao\Controller;
 use Contao\System;
 use Contao\Module;
@@ -43,8 +43,8 @@ class ModuleC4gTariffs extends Module
         $pageId = $this->mapPage;
         $pageUrl = Controller::replaceInsertTags("{{link_url:: " . $pageId . "}}");
         ResourceLoader::loadJavaScriptResource("bundles/con4giscore/vendor/jQuery/jquery-ui-1.12.1.custom/jquery-ui.min.js", ResourceLoader::JAVASCRIPT,'jquery-ui');
-        ResourceLoader::loadJavaScriptResource("bundles/con4gisiotravelcosts/build/tariff-finder.js", ResourceLoader::JAVASCRIPT,"tariff-finder" );
-        ResourceLoader::loadCssResource("bundles/con4gisiotravelcosts/dist/css/travel-finder.min.css", "travel-finder");
+        ResourceLoader::loadJavaScriptResource("bundles/con4gistravelcosts/build/tariff-finder.js", ResourceLoader::JAVASCRIPT,"tariff-finder" );
+        ResourceLoader::loadCssResource("bundles/con4gistravelcosts/dist/css/travel-finder.min.css", "travel-finder");
         ResourceLoader::loadCssResource("/bundles/con4giscore/vendor/jQuery/jquery-ui-1.12.1.custom/jquery-ui.min.css",'jquery-ui-css' );
         $template = $this->Template;
         $settingsId = $this->expense_settings_id;

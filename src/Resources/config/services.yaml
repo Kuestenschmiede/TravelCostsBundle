@@ -3,8 +3,8 @@ services:
     autowire: true
     autoconfigure: true
 
-  con4gis\IOTravelCostsBundle\Controller\TravelCostsController:
-    class: con4gis\IOTravelCostsBundle\Controller\TravelCostsController
+  con4gis\TravelCostsBundle\Controller\TravelCostsController:
+    class: con4gis\TravelCostsBundle\Controller\TravelCostsController
     autowire: true
     public: true
     arguments:

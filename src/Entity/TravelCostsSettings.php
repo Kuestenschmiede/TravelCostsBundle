@@ -11,7 +11,7 @@
  * @link       https://www.con4gis.org
  */
 
-namespace con4gis\IOTravelCostsBundle\Entity;
+namespace con4gis\TravelCostsBundle\Entity;
 
 use \Doctrine\ORM\Mapping as ORM;
 use con4gis\CoreBundle\Entity\BaseEntity;
@@ -21,7 +21,7 @@ use con4gis\CoreBundle\Entity\BaseEntity;
  *
  * @ORM\Entity
  * @ORM\Table(name="tl_c4g_travel_costs_settings")
- * @package con4gis\IOTravelCostsBundle\Entity
+ * @package con4gis\TravelCostsBundle\Entity
  */
 class TravelCostsSettings extends BaseEntity
 {

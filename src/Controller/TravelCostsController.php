@@ -11,12 +11,12 @@
  * @link       https://www.con4gis.org
  */
 
-namespace con4gis\IOTravelCostsBundle\Controller;
+namespace con4gis\TravelCostsBundle\Controller;
 
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use con4gis\IOTravelCostsBundle\Classes\Services\ExpenseService;
-use con4gis\IOTravelCostsBundle\Classes\Services\TariffService;
+use con4gis\TravelCostsBundle\Classes\Services\ExpenseService;
+use con4gis\TravelCostsBundle\Classes\Services\TariffService;
 use Contao\CoreBundle\Framework\ContaoFramework;
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

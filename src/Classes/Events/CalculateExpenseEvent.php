@@ -9,10 +9,10 @@
  * @link https://www.con4gis.org
  */
 
-namespace con4gis\IOTravelCostsBundle\Classes\Events;
+namespace con4gis\TravelCostsBundle\Classes\Events;
 
 use Symfony\Contracts\EventDispatcher\Event;
-use con4gis\IOTravelCostsBundle\Entity\TravelCostsSettings;
+use con4gis\TravelCostsBundle\Entity\TravelCostsSettings;
 
 class CalculateExpenseEvent extends Event
 {

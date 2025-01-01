@@ -11,7 +11,7 @@
  * @link       https://www.con4gis.org
  */
 
-namespace con4gis\IOTravelCostsBundle\DependencyInjection;
+namespace con4gis\TravelCostsBundle\DependencyInjection;
 
 
 use Symfony\Component\Config\FileLocator;
@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class con4gisIOTravelCostsExtension extends Extension
+class con4gisTravelCostsExtension extends Extension
 {
     /**
      * {@inheritdoc}
