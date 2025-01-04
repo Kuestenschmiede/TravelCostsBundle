@@ -35,10 +35,15 @@ class TravelCostsController extends AbstractController
         $this->framework = $contaoFramework;
     }
     /**
-     * @Route("/con4gis/expenseService/{settings}/{locations}/{tariffId}/{time}", defaults={"tariffId":null,"time":null}, name="getExpenseService", methods={"GET"})
      * @param $request
      * @return JsonResponse
      */
+    #[Route(
+        path: '/con4gis/expenseService/{settings}/{locations}/{tariffId}/{time}',
+        defaults: ['tariffId' => null, 'time' => null],
+        name: 'getExpenseService',
+        methods: ['GET']
+    )]
     public function getExpensesAction(Request $request, $settings, $locations, $tariffId = null, $time = null){
         $this->framework->initialize();
         $expenseService = new ExpenseService($this->entityManager, $this->eventDispatcher);
@@ -47,10 +52,14 @@ class TravelCostsController extends AbstractController
         return $response;
     }
     /**
-     * @Route("/con4gis/tariffService/{settingId}", name="getTariffService", methods={"GET"})
      * @param $request
      * @return JsonResponse
      */
+    #[Route(
+        path: '/con4gis/tariffService/{settingId}',
+        name: 'getTariffService',
+        methods: ['GET']
+    )]
     public function getTariffAction(Request $request, $settingId){
         $tariffService = new TariffService($this->entityManager);
         $response = new JsonResponse();

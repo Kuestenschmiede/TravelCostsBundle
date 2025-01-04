@@ -42,7 +42,7 @@ class ModuleC4gTravelCosts extends Module
      */
     public function generate()
     {
-        if (TL_MODE == 'BE') {
+        if (C4GUtils::isBackend()) {
             $objTemplate = new BackendTemplate('be_wildcard');
             $objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FMD']['c4g_travel_costs'][0].' ###';
             $objTemplate->title = $this->headline;
@@ -60,7 +60,7 @@ class ModuleC4gTravelCosts extends Module
     protected function compile()
     {
         $pageId = $this->mapPage;
-        $pageUrl = Controller::replaceInsertTags("{{link_url:: " . $pageId . "}}");
+        $pageUrl = C4GUtils::replaceInsertTags("{{link_url:: " . $pageId . "}}");
         ResourceLoader::loadJavaScriptResource("bundles/con4giscore/vendor/jQuery/jquery-ui-1.12.1.custom/jquery-ui.min.js", ResourceLoader::JAVASCRIPT, 'jquery-ui');
         ResourceLoader::loadJavaScriptResource( "bundles/con4gistravelcosts/build/travel-finder.js", ResourceLoader::JAVASCRIPT, "travel-finder");
         ResourceLoader::loadCssResource("bundles/con4gistravelcosts/dist/css/travel-finder.min.css", "travel-finder");
@@ -129,7 +129,7 @@ class ModuleC4gTravelCosts extends Module
              $language = $tariffConfig->getLanguage() === 1 ? "en" : "de";
         }
         else {
-            $language = Controller::replaceInsertTags("{{page::language}}");
+            $language = C4GUtils::replaceInsertTags("{{page::language}}");
         }
         $arrSettings['lang'] = $language;
         $arrSettings['autoLength'] = $tariffConfig->getLimitAutocomplete() ?: 10;

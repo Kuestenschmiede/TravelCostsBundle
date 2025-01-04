@@ -3,6 +3,7 @@
 
 namespace con4gis\TravelCostsBundle\Resources\contao\modules;
 
+use con4gis\CoreBundle\Classes\C4GUtils;
 use con4gis\CoreBundle\Classes\ResourceLoader;
 use con4gis\TravelCostsBundle\Entity\TravelCostsSettings;
 use Contao\Controller;
@@ -23,7 +24,7 @@ class ModuleC4gTariffs extends Module
      */
     public function generate()
     {
-        if (TL_MODE == 'BE') {
+        if (C4GUtils::isBackend()) {
             $objTemplate = new BackendTemplate('be_wildcard');
             $objTemplate->wildcard = '### '.$GLOBALS['TL_LANG']['FMD']['c4g_tariffs'][0].' ###';
             $objTemplate->title = $this->headline;
@@ -41,7 +42,7 @@ class ModuleC4gTariffs extends Module
     protected function compile()
     {
         $pageId = $this->mapPage;
-        $pageUrl = Controller::replaceInsertTags("{{link_url:: " . $pageId . "}}");
+        $pageUrl = C4GUtils::replaceInsertTags("{{link_url:: " . $pageId . "}}");
         ResourceLoader::loadJavaScriptResource("bundles/con4giscore/vendor/jQuery/jquery-ui-1.12.1.custom/jquery-ui.min.js", ResourceLoader::JAVASCRIPT,'jquery-ui');
         ResourceLoader::loadJavaScriptResource("bundles/con4gistravelcosts/build/tariff-finder.js", ResourceLoader::JAVASCRIPT,"tariff-finder" );
         ResourceLoader::loadCssResource("bundles/con4gistravelcosts/dist/css/travel-finder.min.css", "travel-finder");
@@ -78,7 +79,7 @@ class ModuleC4gTariffs extends Module
             $language = $tariffConfig->getLanguage() === 1 ? "en" : "de";
         }
         else {
-            $language = Controller::replaceInsertTags("{{page::language}}");
+            $language = C4GUtils::replaceInsertTags("{{page::language}}");
         }
         $template->lang = $language;
         $template->settingId = $settingsId;
