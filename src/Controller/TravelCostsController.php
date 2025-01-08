@@ -35,6 +35,12 @@ class TravelCostsController extends AbstractController
         $this->framework = $contaoFramework;
     }
     /**
+     * @Route(
+     *      path="/con4gis/expenseService/{settings}/{locations}/{tariffId}/{time}",
+     *      defaults={"tariffId"=null, "time"=null},
+     *      name="getExpenseService",
+     *      methods={"GET"}
+     *  )
      * @param $request
      * @return JsonResponse
      */
@@ -52,6 +58,11 @@ class TravelCostsController extends AbstractController
         return $response;
     }
     /**
+     * @Route(
+     *      path="/con4gis/tariffService/{settingId}",
+     *      name="getTariffService",
+     *      methods={"GET"}
+     *  )
      * @param $request
      * @return JsonResponse
      */
