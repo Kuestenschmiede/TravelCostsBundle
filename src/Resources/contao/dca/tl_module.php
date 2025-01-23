@@ -34,7 +34,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['expense_settings_id'] =
  */
 class tl_module_c4g_expenses extends Contao\Backend
 {
-    public function getExpenseSettings(DataContainer $dc){
+    public function getExpenseSettings(\Contao\DataContainer $dc){
         $stmt = $this->Database->prepare("SELECT id, caption FROM tl_c4g_travel_costs_settings");
         $result = $stmt->execute();
         $return = [];
