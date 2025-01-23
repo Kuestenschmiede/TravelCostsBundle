@@ -314,7 +314,7 @@ class tl_c4g_travel_costs_settings extends \Contao\Backend
         return $this->getFileArray('colors');
     }
 
-        public function setLon($varValue, DataContainer $dc)
+    public function setLon($varValue, \Contao\DataContainer $dc)
     {
         if (!\con4gis\MapsBundle\Classes\Utils::validateLon($varValue)) {
             throw new Exception($GLOBALS['TL_LANG']['c4g_maps']['geox_invalid']);
@@ -322,7 +322,7 @@ class tl_c4g_travel_costs_settings extends \Contao\Backend
         return $varValue;
     }
 
-    public function setLat($varValue, DataContainer $dc)
+    public function setLat($varValue, \Contao\DataContainer $dc)
     {
         if (!\con4gis\MapsBundle\Classes\Utils::validateLon($varValue)) {
             throw new Exception($GLOBALS['TL_LANG']['c4g_maps']['geox_invalid']);
