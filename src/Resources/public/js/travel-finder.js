@@ -533,14 +533,18 @@ $(document).ready(function() {
     let submitButton = document.getElementById('btn-submit-expense-calc');
     submitButton.innerText = langConstants.START_SEARCH;
     $(submitButton).on('click', function() {
-      if (travelData.routeFrom.loc && travelData.routeTo.loc) {
-        calculateExpenses();
+
+      if (($(objInputFrom).val() !== "") && $(objInputTo).val() !== "") {
+        if (travelData.routeFrom.loc && travelData.routeTo.loc) {
+          calculateExpenses();
+        } else {
+          travelData.routeFrom.loc = [];
+          travelData.routeTo.loc = [];
+          submitSearch(objInputFrom, ".route-from");
+          submitSearch(objInputTo, ".route-to");
+        }
       }
-      else {
-        travelData.routeFrom.loc = [];
-        travelData.routeTo.loc = [];
-        submitSearch(objInputFrom, ".route-from");
-        submitSearch(objInputTo, ".route-to");    }
+
     });
     let resetButton = document.getElementById('btn-reset-expense-calc');
     resetButton.innerText = langConstants.RESET;
@@ -549,6 +553,8 @@ $(document).ready(function() {
       $(".route-output").css("display", "none");
       $(".tariff-output.hideAgain").css("display", "none");
       $(".remove-over-input").trigger('click');
+      travelData.routeFrom.loc = null;
+      travelData.routeTo.loc = null;
     })
   }
   $("span.deleteIcon span"). on ("click", (element) => {
