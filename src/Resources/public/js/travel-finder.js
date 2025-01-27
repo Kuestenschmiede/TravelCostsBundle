@@ -368,7 +368,7 @@ function calculateExpenses () {
     let url = "con4gis/expenseService/" + objSettings.settingId + "/" + travelData.routeFrom.loc[0] + "," + travelData.routeFrom.loc[1] + ";";
     if (travelData.routeOver) {
       for (let i in travelData.routeOver) {
-        if (travelData.routeOver.hasOwnProperty(i) && travelData.routeOver[i].loc) {
+        if (travelData.routeOver.hasOwnProperty(i) && travelData.routeOver[i].loc && travelData.routeOver[i].loc.length > 0) {
           url += travelData.routeOver[i].loc[0] + "," + travelData.routeOver[i].loc[1] + ";"
         }
       }
