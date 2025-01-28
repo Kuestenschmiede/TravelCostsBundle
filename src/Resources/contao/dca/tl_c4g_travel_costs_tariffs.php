@@ -116,7 +116,9 @@ $GLOBALS['TL_DCA'][$strName] = array
             'label'                   => &$GLOBALS['TL_LANG'][$strName]['basePrice'],
             'default'                 => 0,
             'inputType'               => 'text',
-            'eval'                    => ['regxp'=>'digit'],
+            'save_callback'           => [[\con4gis\TravelCostsBundle\Classes\Backend\TariffsBackendCallback::class, 'storeBasePrice']],
+            'load_callback'           => [[\con4gis\TravelCostsBundle\Classes\Backend\TariffsBackendCallback::class, 'loadBasePrice']],
+            'eval'                    => [],
         ],
         'distancePrice' => [
             'label'                   => &$GLOBALS['TL_LANG'][$strName]['distancePrice'],

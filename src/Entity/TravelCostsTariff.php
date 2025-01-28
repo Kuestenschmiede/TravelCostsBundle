@@ -52,7 +52,7 @@ class TravelCostsTariff extends BaseEntity
     protected $caption = '';
 
     /**
-     * @var int
+     * @var float
      * @ORM\Column(type="float")
      */
     protected $basePrice = 0.0;
