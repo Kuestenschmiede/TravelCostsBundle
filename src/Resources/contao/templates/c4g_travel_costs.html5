@@ -27,7 +27,7 @@
 
     <div class="route-to-input">
         <div class="input-route-from-label-wrapper">
-            <label for="routeFrom" class="input-route-from-label">Ziel-Adresse</label>
+            <label for="routeTo" class="input-route-from-label">Ziel-Adresse</label>
         </div>
         <div class="input-route-to-field">
             <?php if ($this->arrSettings['posButton']): ?>
@@ -45,7 +45,13 @@
     <div class="price-options">
         <?php foreach ($this->arrSettings['addPriceOptions'] as $id => $row): ?>
         <?php if ($row['name'] && $row['addPrice']): ?>
-            <input class="add-prices" type="checkbox" value="<?php echo $row['addPrice'] ?>"><?php echo $row['name'] . " " . $row['addPrice'] ?>€ <br>
+            <div class="add-prices-wrapper">
+                <input id="prices_<?= $id ?>" class="add-prices" type="checkbox" value="<?php echo $row['addPrice'] ?>">
+
+                <label for="prices_<?= $id ?>"><?php echo $row['name'] . " " . $row['addPrice'] ?>€ </label>
+                <label class="sr-only"><?php echo $row['name'] . " " . $row['addPrice'] ?>€ </label>
+            </div>
+
         <?php endif; ?>
         <?php endforeach ?>
     </div>
