@@ -27,7 +27,7 @@
 
     <div class="route-to-input">
         <div class="input-route-from-label-wrapper">
-            <label for="routeFrom" class="input-route-from-label">Start-Adresse</label>
+            <label for="routeFrom" class="input-route-from-label">Ziel-Adresse</label>
         </div>
         <div class="input-route-to-field">
             <?php if ($this->arrSettings['posButton']): ?>
