@@ -19,197 +19,197 @@ use con4gis\CoreBundle\Entity\BaseEntity;
 /**
  * Class TravelCostsSettings
  *
- * @ORM\Entity
- * @ORM\Table(name="tl_c4g_travel_costs_settings")
  * @package con4gis\TravelCostsBundle\Entity
  */
+#[ORM\Table(name: 'tl_c4g_travel_costs_settings')]
+#[ORM\Entity]
 class TravelCostsSettings extends BaseEntity
 {
     /**
      * @var int
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     protected $id = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $tstamp = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer", options={"default":0})
      */
+    #[ORM\Column(type: 'integer', options: ['default' => 0])]
     protected $importId = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $caption = '';
 
      /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $type = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $startBboxUpperx = '';
     
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $startBboxUppery = '';
     
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $startBboxDownerx = '';
     
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $startBboxDownery = '';
 
     /**
      * @var array
-     * @ORM\Column(type="array")
      */
+    #[ORM\Column(type: 'simple_array')]
     protected $tariffs = [];
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $withDateTime = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=1)
      */
+    #[ORM\Column(type: 'string', length: 1)]
     protected $withPositionButton = '0';
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=1)
      */
+    #[ORM\Column(type: 'string', length: 1)]
     protected $withSubmitButton = '0';
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=1)
      */
+    #[ORM\Column(type: 'string', length: 1)]
     protected $withDeleteButton = '0';
    
     /**
      * @var string
-     * @ORM\Column(type="string", length=1)
      */
+    #[ORM\Column(type: 'string', length: 1)]
     protected $overPositions = '0';
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $timeAtStop = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=1)
      */
+    #[ORM\Column(type: 'string', length: 1)]
     protected $addTimes = '0';
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $distPrice = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $centerx = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $centery = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $errorMessageBounds = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $errorMessageNotFound = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $searchPlaceholder = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $inputPlaceholder = '';
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $language = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $currency = '€';
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $tariffDisplay = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $displayText = '';
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=1)
      */
+    #[ORM\Column(type: 'string', length: 1)]
     protected $hideDisplay = '0';
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $limitAutocomplete = 10;
     
     /**
      * @var null
-     * @ORM\Column(type="array")
      */
+    #[ORM\Column(type: 'json')]
     protected $addPriceOptions = [];
 
     /**

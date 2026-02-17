@@ -29,7 +29,7 @@ class TariffService
             $arrTariffs = $this->entityManager->getRepository(TravelCostsTariff::class)->findBy(['id' => $arrTariffIds]);
             if ($arrTariffs[0]) {
                 $arrSendTariffs = [];
-                foreach ($arrTariffs as $key => $objTariff) {
+                foreach ($arrTariffs as $objTariff) {
                     if ($objTariff  instanceof TravelCostsTariff) {
                         $arrSendTariffs[$objTariff->getCaption()] =
                             ['basePrice' => $objTariff->getBasePrice(),

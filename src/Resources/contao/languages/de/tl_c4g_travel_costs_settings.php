@@ -40,7 +40,7 @@ $GLOBALS['TL_LANG'][$strName]['currency'] = ['Währung', 'Währung anpassen.'];
 $GLOBALS['TL_LANG'][$strName]['limitAutocomplete'] = ['Anzahl Vorschläge', 'Geben Sie die Anzahl der Vorschläge ein.'];
 $GLOBALS['TL_LANG'][$strName]['addPriceOptions'] = ['Weitere Preis-Optionen', 'Geben Sie zusätzliche Kosten und Aufpreise an.'];
 $GLOBALS['TL_LANG'][$strName]['name'] = ['Name', 'Name der Preis-Option.'];
-$GLOBALS['TL_LANG'][$strName]['addPrice'] = ['Preis', 'Wert der Preis-Oütion'];
+$GLOBALS['TL_LANG'][$strName]['addPrice'] = ['Preis', 'Wert der Preis-Option'];
 
 
 

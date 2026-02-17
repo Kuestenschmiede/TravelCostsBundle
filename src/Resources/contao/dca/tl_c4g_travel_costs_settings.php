@@ -1,4 +1,5 @@
-<?php use Contao\DC_Table;
+<?php use con4gis\TravelCostsBundle\Classes\Backend\TariffsBackendCallback;
+use Contao\DC_Table;
 
 /*
  * This file is part of con4gis,
@@ -134,6 +135,8 @@ $GLOBALS['TL_DCA'][$strName] = array
             'inputType' => 'checkbox',
             'options_callback' => ['tl_c4g_travel_costs_settings', 'getTariffs'],
             'eval' => ['mandatory' => false, 'multiple' => true],
+            'save_callback' => [[TariffsBackendCallback::class, 'saveSimpleArrayValue']],
+            'load_callback' => [[TariffsBackendCallback::class, 'loadSimpleArrayValue']],
         ],
         'withDateTime' => [
             'label' => &$GLOBALS['TL_LANG'][$strName]['withDateTime'],
@@ -279,22 +282,28 @@ $GLOBALS['TL_DCA'][$strName] = array
             'label'                   => &$GLOBALS['TL_LANG'][$strName]['addPriceOptions'],
             'default'                 => '',
             'inputType'               => 'multiColumnWizard',
+            'dragAndDrop'               => false,
             'eval'                    => [
                 'columnFields' => [
                     'name' => [
                         'label'             => &$GLOBALS['TL_LANG'][$strName]['name'],
                         'default'           => "",
                         'inputType'         => 'text',
+                        'eval' => ['tl_class' => 'w33', 'wrapper_style' => 'width:47%',],
                     ],
                     'addPrice' => [
                         'label'             => &$GLOBALS['TL_LANG'][$strName]['addPrice'],
                         'default'           => 0,
                         'inputType'         => 'text',
-                        'eval'              => ['regxp'=>'digit']
+                        'eval'              => ['regxp'=>'digit', 'tl_class' => 'w33']
                     ]
-                ]
-            ]
-        ]
+                ],
+                'tl_class' => 'clr',
+            ],
+            'save_callback' => [[TariffsBackendCallback::class, 'saveJsonValue']],
+            'load_callback' => [[TariffsBackendCallback::class, 'loadJsonValue']],
+        ],
+
     ]
 );
 class tl_c4g_travel_costs_settings extends \Contao\Backend

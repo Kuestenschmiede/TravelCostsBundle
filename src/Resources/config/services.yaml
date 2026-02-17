@@ -11,3 +11,11 @@ services:
       - "@doctrine.orm.entity_manager"
       - "@event_dispatcher"
       - "@contao.framework"
+
+  ## migrations
+  con4gis\TravelCostsBundle\Migration\UpdateArraysMigration:
+    arguments:
+      - "@database_connection"
+      - "@logger"
+    tags:
+      - { name: contao.migration, priority: 0 }

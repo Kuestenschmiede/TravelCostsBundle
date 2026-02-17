@@ -1,4 +1,5 @@
-<?php use Contao\DC_Table;
+<?php use con4gis\TravelCostsBundle\Classes\Backend\TariffsBackendCallback;
+use Contao\DC_Table;
 
 /*
  * This file is part of con4gis,
@@ -116,8 +117,8 @@ $GLOBALS['TL_DCA'][$strName] = array
             'label'                   => &$GLOBALS['TL_LANG'][$strName]['basePrice'],
             'default'                 => 0,
             'inputType'               => 'text',
-            'save_callback'           => [[\con4gis\TravelCostsBundle\Classes\Backend\TariffsBackendCallback::class, 'storeBasePrice']],
-            'load_callback'           => [[\con4gis\TravelCostsBundle\Classes\Backend\TariffsBackendCallback::class, 'loadBasePrice']],
+            'save_callback'           => [[TariffsBackendCallback::class, 'storeBasePrice']],
+            'load_callback'           => [[TariffsBackendCallback::class, 'loadBasePrice']],
             'eval'                    => [],
         ],
         'distancePrice' => [
@@ -130,6 +131,7 @@ $GLOBALS['TL_DCA'][$strName] = array
                         'label'             => &$GLOBALS['TL_LANG'][$strName]['name'],
                         'default'           => 0,
                         'inputType'         => 'text',
+                        'eval' => ['wrapper_style' => 'width:24%',]
                     ],
                     'fromKilometer' => [
                         'label'             => &$GLOBALS['TL_LANG'][$strName]['fromKilometer'],
@@ -150,6 +152,8 @@ $GLOBALS['TL_DCA'][$strName] = array
                     ]
                 ]
             ],
+            'save_callback' => [[TariffsBackendCallback::class, 'saveJsonValue']],
+            'load_callback' => [[TariffsBackendCallback::class, 'loadJsonValue']],
         ],
         'timePrice' => [
             'label'                   => &$GLOBALS['TL_LANG'][$strName]['timePrice'],

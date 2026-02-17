@@ -19,131 +19,131 @@ use con4gis\CoreBundle\Entity\BaseEntity;
 /**
  * Class TravelCostsTariff
  *
- * @ORM\Entity
- * @ORM\Table(name="tl_c4g_travel_costs_tariffs")
  * @package con4gis\TravelCostsBundle\Entity
  */
+#[ORM\Table(name: 'tl_c4g_travel_costs_tariffs')]
+#[ORM\Entity]
 class TravelCostsTariff extends BaseEntity
 {
     /**
      * @var int
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     protected $id = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $tstamp = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer", options={"default":0})
      */
+    #[ORM\Column(type: 'integer', options: ['default' => 0])]
     protected $importId = 0;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     protected $caption = '';
 
     /**
      * @var float
-     * @ORM\Column(type="float")
      */
+    #[ORM\Column(type: 'float')]
     protected $basePrice = 0.0;
 
     /**
      * @var null
-     * @ORM\Column(type="array")
      */
+    #[ORM\Column(type: 'json')]
     protected $distancePrice = [];
     
     /**
      * @var float
-     * @ORM\Column(type="float")
      */
+    #[ORM\Column(type: 'float')]
     protected $timePrice = 0.0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $stopTime = 0;    
     /**
      * @var float
-     * @ORM\Column(type="float")
      */
+    #[ORM\Column(type: 'float')]
     protected $interimPrice = 0;
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $timeBegin = '';
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $timeEnd = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $monday = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $tuesday = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $wednesday = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $thursday = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $friday = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $saturday = '';
 
     /**
      * @var string
-     * @ORM\Column(type="text")
      */
+    #[ORM\Column(type: 'text')]
     protected $sunday = '';
     
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $beginDistance = '';
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     protected $endDistance = '';
 
     /**
