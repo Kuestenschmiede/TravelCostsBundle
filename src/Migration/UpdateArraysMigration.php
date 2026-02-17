@@ -58,7 +58,7 @@ class UpdateArraysMigration implements MigrationInterface
 
         foreach ($datasets as $dataset) {
             foreach ($this->fields as $field) {
-                if ($this->checkForSerializedValue($dataset[$field])) {
+                if (array_key_exists($field, $dataset) && $this->checkForSerializedValue($dataset[$field])) {
                     return true;
                 }
             }
